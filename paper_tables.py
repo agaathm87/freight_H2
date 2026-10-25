@@ -1,8 +1,9 @@
 """Tables for the paper, built from the model settings and the saved outputs.
 
-    Table 1   scenario settings: Panel A the assignment's trucks, Panel B the scenario axes and the realistic layer
+    Table 1   scenario settings: Panel A the assignment's trucks, Panel B the scenario axes and the carbon price,
+              Panel C the realistic-layer settings that bind or change the truck mix
     Table 2   sensitivities in 2030 and 2050: Panel A the core (ICE + BET), Panel B the realistic layer
-    Table A2  truck parameters by period (all truck types)
+    Table A2  Panel A truck parameters by period (all truck types), Panel B all realistic-layer settings
     Table A3  calibration and tests (assignment step 5)
 
 Run it after analysis_freight.py, which writes the CSVs it reads:   python paper_tables.py
@@ -115,16 +116,17 @@ def table1_trucks():
     return pd.DataFrame(rows, columns=['Parameter', 'ICE truck', 'BET'])
 
 
-def table1_settings():
-    """Panel B: the scenario axes, the carbon price and the realistic layer, per period."""
+SETTING_COLS = ['Setting', 'Scenarios'] + [str(y) for y in YEARS] + ['Source']
+
+
+def table1_axes():
+    """Panel B: the freight demand, the scenario axes (X: BET costs, Y: gasoline price) and the carbon price, per
+    period; the same in every run."""
     summary = pd.read_csv(os.path.join(OUTPUTS, 'freight_summary.csv')).set_index(['run', 'period'])
     demand = {y: summary.loc[('F1_nofcet', y), 'Freight demand (TWh/yr)'] for y in YEARS}
-    cols = ['Setting', 'Scenarios'] + [str(y) for y in YEARS] + ['Source']
     x_c, x_d = scenarios_with('bet', 'constant'), scenarios_with('bet', 'decrease')
     y_m, y_s = scenarios_with('fuel', 'moderate'), scenarios_with('fuel', 'sharp')
-    blank = [''] * (len(YEARS) + 2)
-    rows = [['**Scenario axes and carbon price (all runs)**'] + blank,
-            ['Freight demand (TWh/yr of truck output)', 'All', *by_year(demand, lambda v: num(v, 1)),
+    rows = [['Freight demand (TWh/yr of truck output)', 'All', *by_year(demand, lambda v: num(v, 1)),
              'Assignment (90 PJ in 2020); GDP elasticity 0.6 (KiM, 2021: ~1.0 in the short run)'],
             ['BET CAPEX (€/kW)', x_c, *by_year(BET_COSTS['constant']['CAPEX'], num), 'Assignment'],
             ['', x_d, *by_year(BET_COSTS['decrease']['CAPEX'], num), 'Link et al. (2024)'],
@@ -132,57 +134,81 @@ def table1_settings():
              *by_year(BET_COSTS['constant']['VOM'], lambda v: num(v, 2)), 'Assignment'],
             ['', x_d, *by_year(BET_COSTS['decrease']['VOM'], lambda v: num(v, 2)),
              'Charging roll-out (Regulation (EU) 2023/1804)'],
-            ['Gasoline price, with excise (€/MWh)', y_m, *by_year(GASOLINE_PRICES['moderate'], num), 'IISD (2025)'],
+            ['Gasoline price, with excise (€/MWh)', y_m, *by_year(GASOLINE_PRICES['moderate'], num),
+             'IEA (2025, as cited in IISD, 2025)'],
             ['', y_s, *by_year(GASOLINE_PRICES['sharp'], num), 'Course database'],
             ['Carbon price, ETS1 (€/t CO2)', 'All', *by_year(CO2_PRICES[CO2], num),
              'Group model (Učelniece et al., 2026)'],
             ['Carbon price, ETS2 on road fuels (€/t CO2)', 'All', *by_year(CO2_PRICES_ETS2[CO2], num, skip_zero=True),
-             'van der Veen et al. (2026, p. 17)'],
-            ['**Realistic layer (F1_real to F4_real)**'] + blank]
+             'van der Veen et al. (2026, p. 17)']]
+    return pd.DataFrame(rows, columns=SETTING_COLS)
+
+
+def realistic_settings():
+    """All settings of the realistic layer per period, as {key: rows}, in table order. The four realistic scenarios
+    share them, except the diesel price (the scenario's fuel path)."""
     ze_min, ze_max = ZE_MANDATES[REAL['ze_min_share']], ZE_MANDATES[REAL['ze_max_share']]
     h2_max = H2_TRUCK_SHARES[REAL['h2_truck_max_share']]
-    rows += [['Zero-emission share of freight, minimum (CO2 standards)', 'All', *by_year(ze_min, pct),
-              'Regulation (EU) 2024/1610; Transport & Environment (2024)'],
-             ['Zero-emission share of freight, maximum (market ramp-up)', 'All', *by_year(ze_max, pct),
-              'Mulholland & Benoit (2026)'],
-             ['Hydrogen trucks (FCET + H2-ICE), maximum share of freight', 'All', *by_year(h2_max, pct),
-              'Regulation (EU) 2023/1804; Electrive (2026)']]
     tiers = BET_TIERS[REAL['bet_tiers']]
     urban, regional = tiers['BET - urban'], tiers['BET']
-    rows += [["BET duty cycles, share of freight: urban at most / regional (the assignment's BET) the next; "
-              "long haul the rest (costs: Table A2)",
-              'All', DASH, *[f"{pct(urban['share'])} / {pct(regional['share'])}"] * (len(YEARS) - 1),
-              'TNO (2021); Sharpe & Basma (2022); Basma et al. (2022); Milence (2025)'],
-             ['Heavy special segment, ICE or H2-ICE trucks only (share of freight)', 'All',
-              *by_year({y: REAL['freight_heavy_share'] for y in YEARS}, pct),
-              'Wang & Ahluwalia (2026); MAN Truck & Bus (2024)']]
     toll = TRUCK_TOLLS[REAL['truck_toll']]
-    rows += [['Truck toll, ICE / zero-emission (€/km)', 'All',
-              *[DASH if toll['ICE'][y] == 0 else f"{num(toll['ICE'][y], 2)} / {num(toll['ZE'][y], 3)}"
-                for y in YEARS], 'Ministerie van Infrastructuur en Waterstaat (2026)'],
-             ['Purchase subsidy for BETs, AanZET (share of CAPEX)', 'All',
-              *by_year(BET_SUBSIDIES[REAL['bet_capex_subsidy']], pct, skip_zero=True), 'RVO (2026a)'],
-             ['Purchase subsidy for hydrogen trucks, SWiM (share of CAPEX)', 'All',
-              *by_year(H2TRUCK_SUBSIDIES[REAL['h2truck_capex_subsidy']], pct, skip_zero=True), 'RVO (2026b)'],
-             ['Electrolyser subsidy, OWE (share of CAPEX)', 'All',
-              *by_year(REAL['electrolyser_subsidy'], pct, skip_zero=True), 'RVO (n.d.); Rijksoverheid (2025)'],
-             ['Renewable hydrogen in road transport (share of road-transport energy, counted double)', 'All',
-              *by_year(RFNBO_TRANSPORT[REAL['rfnbo_transport']], pct), 'Directive (EU) 2023/2413'],
-             ['Renewable hydrogen in industry, Dutch obligation (share of industrial hydrogen)', 'All',
-              *by_year(GREEN_MANDATES[REAL['green_mandate']], pct),
-              'Tweede Kamer der Staten-Generaal (2026); KGG (2026)']]
+    s = {'ze_min': [['Zero-emission share of freight, minimum (CO2 standards)', 'All', *by_year(ze_min, pct),
+                     'Regulation (EU) 2024/1610; Transport & Environment (2024)']],
+         'ze_max': [['Zero-emission share of freight, maximum (market ramp-up)', 'All', *by_year(ze_max, pct),
+                     'Mulholland & Benoit (2026)']],
+         'h2_max': [['Hydrogen trucks (FCET + H2-ICE), maximum share of freight', 'All', *by_year(h2_max, pct),
+                     'Regulation (EU) 2023/1804; Electrive (2026)']],
+         'tiers': [["BET duty cycles, share of freight: urban at most / regional (the assignment's BET) the next; "
+                    "long haul the rest (costs: Table A2, Panel A)",
+                    'All', DASH, *[f"{pct(urban['share'])} / {pct(regional['share'])}"] * (len(YEARS) - 1),
+                    'TNO (2021); Sharpe & Basma (2022); Basma et al. (2022); Milence (2025)']],
+         'heavy': [['Heavy special segment, ICE or H2-ICE trucks only (share of freight)', 'All',
+                    *by_year({y: REAL['freight_heavy_share'] for y in YEARS}, pct),
+                    'Wang & Ahluwalia (2026); MAN Truck & Bus (2024)']],
+         'toll': [['Truck toll, ICE / zero-emission (€/km)', 'All',
+                   *[DASH if toll['ICE'][y] == 0 else f"{num(toll['ICE'][y], 2)} / {num(toll['ZE'][y], 3)}"
+                     for y in YEARS], 'Ministerie van Infrastructuur en Waterstaat (2026)']],
+         'aanzet': [['Purchase subsidy for BETs, AanZET (share of CAPEX)', 'All',
+                     *by_year(BET_SUBSIDIES[REAL['bet_capex_subsidy']], pct, skip_zero=True), 'RVO (2026a)']],
+         'swim': [['Purchase subsidy for hydrogen trucks, SWiM (share of CAPEX)', 'All',
+                   *by_year(H2TRUCK_SUBSIDIES[REAL['h2truck_capex_subsidy']], pct, skip_zero=True), 'RVO (2026b)']],
+         'owe': [['Electrolyser subsidy, OWE (share of CAPEX)', 'All',
+                  *by_year(REAL['electrolyser_subsidy'], pct, skip_zero=True), 'RVO (n.d.); Rijksoverheid (2025)']],
+         'red3': [['Renewable hydrogen in road transport (share of road-transport energy, counted double)', 'All',
+                   *by_year(RFNBO_TRANSPORT[REAL['rfnbo_transport']], pct), 'Directive (EU) 2023/2413']],
+         'nl_h2': [['Renewable hydrogen in industry, Dutch obligation (share of industrial hydrogen)', 'All',
+                    *by_year(GREEN_MANDATES[REAL['green_mandate']], pct),
+                    'Tweede Kamer der Staten-Generaal (2026); KGG (2026)']]}
     fuel = {}
     for f in FREIGHT_SCENARIOS:
         fuel.setdefault(RUNS[f'{f}_real'][1]['truck_fuel_price'], []).append(f)
-    for i, (key, fs) in enumerate(fuel.items()):
-        rows.append(['Diesel price for trucks, without VAT (€/MWh)' if i == 0 else '', ', '.join(fs),
-                     *by_year(TRUCK_FUEL_PRICES[key], num),
-                     'Weekly Oil Bulletin (European Commission, n.d.)' if i == 0 else "The course's sharp-to-moderate ratio"])
+    s['diesel'] = [['Diesel price for trucks, without VAT (€/MWh)' if i == 0 else '', ', '.join(fs),
+                    *by_year(TRUCK_FUEL_PRICES[key], num),
+                    'Weekly Oil Bulletin (European Commission, n.d.)' if i == 0
+                    else "The course's sharp-to-moderate ratio"]
+                   for i, (key, fs) in enumerate(fuel.items())]
     h2_cost = {y: FCET_PARAMS['VOM'][y] * REAL['fcet_vom_factor'] * KWH_PER_KG for y in YEARS}
-    rows.append(['Hydrogen delivery and station cost (€/kg; ×1.5 of the extension)', 'All',
-                 DASH, *by_year(h2_cost, lambda v: num(v, 2), years=YEARS[1:]), 'Chung & Wang (2024)'])
-    t = pd.DataFrame(rows, columns=cols)
-    return t, ze_max, h2_max
+    s['h2_cost'] = [['Hydrogen delivery and station cost (€/kg; ×1.5 of the extension)', 'All',
+                     DASH, *by_year(h2_cost, lambda v: num(v, 2), years=YEARS[1:]), 'Chung & Wang (2024)']]
+    return s, ze_max
+
+
+# The realistic-layer settings in Table 1, Panel C: those that bind in the runs (ramp-up, hydrogen-truck limit,
+# duty cycles, heavy segment; see freight_shadow_prices.csv) or change the truck mix (toll, diesel price). The
+# CO2-standards floor never binds; the subsidies and hydrogen policies are in Table A2, Panel B.
+PANEL_C = ('ze_max', 'h2_max', 'tiers', 'heavy', 'toll', 'diesel')
+
+
+def table1_realistic():
+    """Panel C: the realistic-layer settings that bind or change the truck mix (PANEL_C)."""
+    s, ze_max = realistic_settings()
+    return pd.DataFrame([r for k in PANEL_C for r in s[k]], columns=SETTING_COLS), ze_max
+
+
+def table_a2_realistic():
+    """Table A2, Panel B: every setting of the realistic layer."""
+    s, _ = realistic_settings()
+    return pd.DataFrame([r for rows in s.values() for r in rows], columns=SETTING_COLS)
 
 
 # --------------------------------------------------------------------------------------------------------------
@@ -252,13 +278,15 @@ def table_a2():
                  path(series('BET - existing', 'FOM'), i0), path(series('BET - existing', 'VOM'), i2),
                  path(series('BET - existing', 'Efficiency'), eff), path(series('BET - existing', 'Lifetime'), i0),
                  'Assignment'])
-    for tech, label in [('BET - urban', 'BET – urban (from 2030)'), ('BET - long haul', 'BET – long haul (from 2030)')]:
+    for tech, label in [('BET - urban', 'BET – urban (from 2030)'),
+                        ('BET - long haul', 'BET – long haul (from 2030)')]:
         f = tiers[tech]
         rows.append([label, 'Realistic layer', f"×{f['capex']:g} of the BET", f"×{f['capex']:g} of the BET",
                      f"×{f['vom']:g} of the BET", path(series('BET', 'Efficiency'), eff),
                      path(series('BET', 'Lifetime'), i0), 'Sharpe & Basma (2022); Basma et al. (2022); Milence (2025)'])
     for params, label, src in [(FCET_PARAMS, 'FCET (from 2030)', 'Basma & Rodríguez (2023); Link et al. (2024)'),
-                               (H2ICE_PARAMS, 'H2-ICE truck (from 2030)', 'Basma et al. (2023); MAN Truck & Bus (2024)')]:
+                               (H2ICE_PARAMS, 'H2-ICE truck (from 2030)',
+                                'Basma et al. (2023); MAN Truck & Bus (2024)')]:
         p = {k: {y: (v[y] if y >= 2030 else None) for y in YEARS} for k, v in params.items()}
         rows.append([label, 'Extension and realistic layer', path(p['CAPEX'], i0),
                      path(p['FOM'], lambda v, nd=int(any(x % 1 for x in params['FOM'].values())): num(v, nd)),
@@ -298,10 +326,13 @@ def table_a3():
 # --------------------------------------------------------------------------------------------------------------
 def main():
     os.makedirs(OUT, exist_ok=True)
-    t1a = table1_trucks()
-    t1b, ze_max, h2_max = table1_settings()
+    for old in os.listdir(OUT):                    # panels renamed or split since the last run
+        if old.endswith('.csv'):
+            os.remove(os.path.join(OUT, old))
+    t1a, t1b = table1_trucks(), table1_axes()
+    t1c, ze_max = table1_realistic()
     t2a, t2b = table2('core'), table2('real')
-    ta2 = table_a2()
+    ta2a, ta2b = table_a2(), table_a2_realistic()
     ta3, tests = table_a3()
     c, c2 = CO2_PRICES, CO2_PRICES_ETS2
     co2_text = '; '.join(f"{k}: ETS1 {' / '.join(num(c[k][y]) for y in YEARS[1:])}, "
@@ -313,22 +344,30 @@ def main():
     base_co2 = first['CO2 freight trucks 2020 (Mt)']
     summary = pd.read_csv(os.path.join(OUTPUTS, 'freight_summary.csv')).set_index(['run', 'period'])
     base_fuel = summary.loc[(first.run, 2020), 'Gasoline for trucks (TWh/yr)'] * 3.6     # TWh -> PJ
+    bet30 = {k: summary.loc[(f'F4_real{k}', 2030), 'BET capacity (GW)'] for k in ('', '_co2central', '_co2high')}
+    bet_share30 = summary.loc[('F1_real', 2030), 'BET share of freight (%)']
+    bet_el30 = summary.loc[('F1_real', 2030), 'Electricity for trucks (TWh/yr)']
+    h2_kg = ' / '.join(num(FCET_PARAMS['VOM'][y] * KWH_PER_KG, 1) for y in YEARS[1:])
     tables = [
         ('table1_panelA_trucks', '**Table 1**', '*Scenario Settings and Parameter Values*',
          "*Panel A. The assignment's trucks (all periods)*", t1a, None),
-        ('table1_panelB_settings', None, None, '*Panel B. Scenario axes, carbon price and the realistic layer*', t1b,
+        ('table1_panelB_axes', None, None, '*Panel B. Freight demand, scenario axes and carbon price (all runs)*',
+         t1b, None),
+        ('table1_panelC_realistic', None, None,
+         '*Panel C. Realistic layer: the settings that bind or change the truck mix*', t1c,
          "*Note.* Money in 2024 euros. CAPEX and FOM per kW of truck output, VOM per kWh of input (the database "
-         "units), so the BET's charging penalty is 100 €/MWh of electricity. The core runs (`_nofcet`) carry only "
-         "the carbon price; the extension adds fuel-cell (FCET) and hydrogen combustion (H2-ICE) trucks from 2030 "
-         "(Table A2). The realistic layer keeps the X/Y matrix and the carbon price and adds the policies in force "
-         f"or planned in October 2026 and the frictions they act on. Long-haul BETs take the rest of freight "
-         f"({pct(lh_share)} after the heavy segment), and the trucks pay the diesel price instead of the gasoline price "
-         "(cars keep the gasoline price). – = not applied. Toll, AanZET, SWiM and OWE are transfers, "
-         "reported next to the system cost. Settings: `energy_model/freight_presets.py` and `run_freight.py`."),
+         "units), so the BET's charging penalty is 100 €/MWh of electricity. Panels A and B hold in every run. The "
+         "core carries only the carbon price; the hydrogen extension adds fuel-cell (FCET) and hydrogen combustion "
+         "(H2-ICE) trucks from 2030 (Table A2, Panel A). The realistic layer keeps the X/Y matrix and the carbon price "
+         "and adds the policies in force or planned in October 2026 and the frictions they act on. Panel C lists its "
+         "settings that bind or change the truck mix; Table A2, Panel B lists all of them, with the CO2-standards "
+         "floor (which never binds), the subsidies and the hydrogen policies. Long-haul BETs take the rest of freight "
+         f"({pct(lh_share)} after the heavy segment), and the trucks pay the diesel price instead of the gasoline "
+         "price (cars keep the gasoline price). – = not applied."),
         ('table2_panelA_core', '**Table 2**', '*Sensitivities: Zero-Emission Share, BET Capacity, System CO2 and '
-         'Cost in 2030 and 2050*', "*Panel A. Core: the assignment's ICE trucks and BETs (`_nofcet` runs)*", t2a,
-         None),
-        ('table2_panelB_realistic', None, None, '*Panel B. Realistic layer: current policies (`_real` runs)*', t2b,
+         'Cost in 2030 and 2050*', "*Panel A. Core: the assignment's ICE trucks and BETs*", t2a, None),
+        ('table2_panelB_realistic', None, None,
+         '*Panel B. Realistic layer: current policies, real prices and market frictions*', t2b,
          f"*Note.* Cost change: total discounted system cost 2020–2059 against the same scenario with the moderate "
          f"carbon price and the base demand profile. BET capacity: output capacity of all BETs (GW of truck output). "
          f"System CO2 covers all sectors. Carbon prices in 2030 / 2040 / "
@@ -336,29 +375,37 @@ def main():
          f"{' / '.join(num(c2[CO2][y]) for y in YEARS[1:])}; {co2_text}. Sunday ban: trucks on Sundays and holidays "
          "until 22:00 at 2% of the base profile; night ban: no trucks from 23:00 to 06:00. In the realistic layer "
          f"the market ramp-up holds the zero-emission share at {pct(ze_max[2030])} in the 2030s in every "
-         "sensitivity. The hydrogen trucks and the policy and green-hydrogen tests are in Figure A17 "
-         "(`freight_policy_levers.csv`). Data: `freight_summary.csv`, `freight_total_cost.csv`."),
-        ('tableA2_truck_parameters', '**Table A2**', '*Truck Parameters by Period*', None, ta2,
-         "*Note.* Values with a slash are 2020 / 2030 / 2040 / 2050; – = not available in that period. Money in "
-         "2024 euros; CAPEX and FOM per kW of truck output, VOM per kWh of input. The ICE trucks emit 0.25 t "
+         f"sensitivity, and the duty-cycle limits fix how much freight the BETs carry ({num(bet_share30, 0)}% in "
+         f"2030, {num(bet_el30, 0)} TWh of electricity, in every row). The sensitivities then change only when the "
+         "BETs drive, so their capacity follows their utilisation and is loosely determined (F4 in 2030: "
+         f"{' / '.join(num(v, 1) for v in bet30.values())} GW at the moderate, central and high carbon price). The "
+         "hydrogen trucks and the policy and green-hydrogen tests are in Figure A17."),
+        ('tableA2_panelA_trucks', '**Table A2**', '*Truck Parameters and Realistic-Layer Settings by Period*',
+         '*Panel A. Truck parameters (all truck types)*', ta2a, None),
+        ('tableA2_panelB_realistic', None, None, '*Panel B. Realistic layer: all settings*', ta2b,
+         "*Note.* Panel A: values with a slash are 2020 / 2030 / 2040 / 2050; – = not available in that period. "
+         "Money in 2024 euros; CAPEX and FOM per kW of truck output, VOM per kWh of input. The ICE trucks emit 0.25 t "
          "CO2 per MWh of fuel. The 2020 stock has no investment cost, a 4-year life (2020 only) and replaces new "
          "trucks in the base year; BET – existing is fixed at 0.1 GW. The VOM of the hydrogen trucks is the "
-         f"hydrogen delivery and station cost ({' / '.join(num(FCET_PARAMS['VOM'][y] * KWH_PER_KG, 1) for y in YEARS[1:])}"
-         " €/kg in 2030 / 2040 / 2050; ×1.5 in the realistic layer), plus 0.01 €/kWh for the H2-ICE engine. The BET "
-         "duty cycles scale the BET of the scenario (FOM scales with CAPEX). Sources and derivations: "
-         "`energy_model/freight_presets.py`."),
+         f"hydrogen delivery and station cost ({h2_kg} €/kg in 2030 / 2040 / 2050; ×1.5 in the realistic layer), "
+         "plus 0.01 €/kWh for the H2-ICE engine. The BET "
+         "duty cycles scale the BET of the scenario (FOM scales with CAPEX). Panel B: the four realistic scenarios "
+         "share these settings, except the diesel price, which follows the scenario's fuel path; the core and the "
+         "hydrogen extension use none of them. The toll, AanZET, SWiM and OWE are transfers, reported next to the "
+         "system cost; – = not applied."),
         ('tableA3_calibration_tests', '**Table A3**', '*Calibration and Tests (Assignment Step 5)*', None, ta3,
          f"*Note.* Cost change: total discounted system cost 2020–2059 against the same scenario without the test "
          f"(the 6-hour run against F1 with hydrogen trucks). Truck energy input is fuel plus electricity. The 90 PJ of "
-         f"the assignment is truck output: at 40% efficiency the ICE trucks burn {num(base_fuel)} PJ of fuel and emit "
-         f"{num(base_co2, 1)} Mt CO2 in 2020, against an observed {obs} Mt for heavy trucks (2014; CE Delft, 2021); "
-         "the fuel test reads the 90 PJ as fuel. The 2020 values are the same in all four scenarios. Without the "
-         "stock the model builds new BETs in 2020; from 2030 on nothing changes. Runs: group `tests` in "
-         "`run_freight.py`; data: `freight_calibration_tests.csv`."),
+         f"the assignment is truck output in the base case: at 40% efficiency the ICE trucks burn {num(base_fuel)} PJ "
+         f"of fuel and emit {num(base_co2, 1)} Mt CO2 in 2020, against an observed {obs} Mt for heavy trucks (2014; "
+         "CE Delft, 2021); the fuel test reads the 90 PJ as fuel. The 2020 values are the same in all four "
+         "scenarios. Without the stock the model builds new BETs in 2020; from 2030 on nothing changes."),
     ]
     md = ['# Paper tables', '',
-          'Written by `paper_tables.py` from the model settings and the saved outputs. Bold first-column rows are '
-          'block headers.', '']
+          'Written by `paper_tables.py` from the model settings (`energy_model/freight_presets.py`, '
+          '`energy_model/h2_presets.py`, `run_freight.py`) and the outputs in `results/outputs/` '
+          '(`freight_summary.csv`, `freight_total_cost.csv`, `freight_calibration_tests.csv`). Titles, panels and '
+          'notes as in the paper outline.', '']
     with pd.ExcelWriter(os.path.join(OUT, 'paper_tables.xlsx')) as xl:
         for key, number, title, panel, df, note in tables:
             df.to_csv(os.path.join(OUT, f'{key}.csv'), index=False)
