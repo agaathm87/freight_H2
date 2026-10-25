@@ -1,0 +1,13 @@
+{
+  "scenario": "F1_fuel90_nofcet",
+  "settings": {
+    "bet_costs": "constant",
+    "co2_price": "low",
+    "fcet": false,
+    "freight_scale": 0.4,
+    "gasoline_price": "moderate",
+    "label": "F1 BET-flat / fuel-moderate"
+  },
+  "source_database": "input_databases/freight_nl",
+  "source_fingerprint": "a2a39270331f8fadf3deede9614e63135262162b013e2875d064ca373c2ecda4"
+}

@@ -1,0 +1,12 @@
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/71 [00:00<?, ?it/s]Writing constraints.:  11%|[38;2;128;191;255m█▏        [0m| 8/71 [00:00<00:00, 69.74it/s]Writing constraints.:  21%|[38;2;128;191;255m██        [0m| 15/71 [00:00<00:02, 25.80it/s]Writing constraints.:  30%|[38;2;128;191;255m██▉       [0m| 21/71 [00:00<00:02, 21.70it/s]Writing constraints.:  34%|[38;2;128;191;255m███▍      [0m| 24/71 [00:01<00:02, 20.31it/s]Writing constraints.:  65%|[38;2;128;191;255m██████▍   [0m| 46/71 [00:01<00:00, 55.67it/s]Writing constraints.:  99%|[38;2;128;191;255m█████████▊[0m| 70/71 [00:01<00:00, 92.48it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 71/71 [00:01<00:00, 56.57it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/15 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 15/15 [00:00<00:00, 217.48it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1315267316464.1758
+F4_real_water: solved in 805 s

@@ -1,0 +1,14 @@
+# Trucks in transition (FinalModel_Freight): Python packages.
+# Python 3.12, 3.13 or 3.14. These are the versions the 72 runs, the tables and the
+# figures were made with (October 2026). Install in a clean environment:  pip install -r requirements.txt
+pypsa==1.3.0          # the energy system model (with linopy)
+linopy==0.10.1        # optimisation layer of PyPSA
+pandas==3.0.5
+numpy==2.5.3
+xarray==2026.9.0
+netCDF4==1.7.5        # reads and writes the solved runs (.nc)
+openpyxl==3.1.5       # reads the Excel databases, writes paper_tables.xlsx
+matplotlib==3.11.2    # figures
+tabulate==0.10.0      # Markdown tables (freight_key_numbers.md, paper_tables.md)
+gurobipy==13.0.3      # the Gurobi solver; requires a valid Gurobi licence
+# notebook            # to open interface.ipynb in Jupyter (VS Code works without it, with ipykernel)

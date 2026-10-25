@@ -1,0 +1,8 @@
+Parameter,ICE truck,BET
+CAPEX (€/kW of output),120,"650 (falling in F2, F4: Panel B)"
+FOM (€/kW/yr),3,5
+VOM (€/kWh of input),0.01,"0.10 (falling in F2, F4: Panel B)"
+Efficiency (%),40,70
+Lifetime (years),12,8
+CO2 (t/MWh of fuel),0.25,–
+2020 stock (2020 only),"ICE truck – existing, size set by the model","BET – existing, 0.1 GW"

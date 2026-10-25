@@ -1,0 +1,12 @@
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/66 [00:00<?, ?it/s]Writing constraints.:  14%|[38;2;128;191;255m█▎        [0m| 9/66 [00:00<00:01, 50.48it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 15/66 [00:00<00:01, 32.91it/s]Writing constraints.:  32%|[38;2;128;191;255m███▏      [0m| 21/66 [00:00<00:01, 31.51it/s]Writing constraints.:  38%|[38;2;128;191;255m███▊      [0m| 25/66 [00:00<00:01, 28.66it/s]Writing constraints.:  76%|[38;2;128;191;255m███████▌  [0m| 50/66 [00:00<00:00, 78.05it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 66/66 [00:00<00:00, 66.22it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 143.84it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1348262182773.187
+F1_real_h2eu: solved in 914 s

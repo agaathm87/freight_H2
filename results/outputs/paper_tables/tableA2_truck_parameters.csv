@@ -1,0 +1,10 @@
+Truck,Runs,CAPEX (€/kW),FOM (€/kW/yr),VOM (€/kWh of input),Efficiency (%),Lifetime (years),Source
+ICE truck,All,120,3,0.01,40,12,Assignment
+ICE truck – existing (2020 stock),All,0,3,0.01,40,4,Assignment
+BET (constant costs),"F1, F3",650,5,0.10,70,8,Assignment
+BET (falling costs),"F2, F4",650 / 420 / 325 / 290,5,0.10 / 0.05 / 0.03 / 0.02,70,8,Link et al. (2024)
+BET – existing (2020 stock),All,0,5,0.10,70,4,Assignment
+BET – urban (from 2030),Realistic layer,×0.8 of the BET,×0.8 of the BET,×0.5 of the BET,70,8,Sharpe & Basma (2022); Basma et al. (2022); Milence (2025)
+BET – long haul (from 2030),Realistic layer,×1.3 of the BET,×1.3 of the BET,×2.5 of the BET,70,8,Sharpe & Basma (2022); Basma et al. (2022); Milence (2025)
+FCET (from 2030),Extension and realistic layer,– / 750 / 550 / 450,– / 6 / 5 / 5,– / 0.12 / 0.09 / 0.075,– / 50 / 52 / 55,10,Basma & Rodríguez (2023); Link et al. (2024)
+H2-ICE truck (from 2030),Extension and realistic layer,– / 180 / 160 / 150,– / 4.5 / 4.0 / 3.8,– / 0.13 / 0.10 / 0.085,– / 37 / 38 / 40,12,Basma et al. (2023); MAN Truck & Bus (2024)

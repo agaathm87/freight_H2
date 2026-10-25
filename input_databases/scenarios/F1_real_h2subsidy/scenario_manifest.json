@@ -1,0 +1,30 @@
+{
+  "scenario": "F1_real_h2subsidy",
+  "settings": {
+    "bet_capex_subsidy": "aanzet",
+    "bet_costs": "constant",
+    "bet_tiers": "nl",
+    "co2_price": "low",
+    "electrolyser_subsidy": {
+      "2020": 0.0,
+      "2030": 0.5,
+      "2040": 0.0,
+      "2050": 0.0
+    },
+    "fcet_vom_factor": 1.5,
+    "freight_heavy_share": 0.05,
+    "gasoline_price": "moderate",
+    "green_mandate": "nl_jaarverplichting",
+    "h2_production_subsidy": 1.0,
+    "h2_truck_max_share": "market",
+    "h2truck_capex_subsidy": "swim",
+    "label": "F1 BET-flat / fuel-moderate",
+    "rfnbo_transport": "red3",
+    "truck_fuel_price": "diesel_nl",
+    "truck_toll": "nl2026",
+    "ze_max_share": "market",
+    "ze_min_share": "eu_hdv_fleet"
+  },
+  "source_database": "input_databases/freight_nl",
+  "source_fingerprint": "962f368edcd1157a21c40414cee561fc17f84704e399c48eba965f6352ffb351"
+}

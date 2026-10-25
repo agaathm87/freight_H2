@@ -1,0 +1,8 @@
+# Python environment and caches (everything else, runs and run databases included, is part of the repository)
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.DS_Store

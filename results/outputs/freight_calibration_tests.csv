@@ -1,0 +1,12 @@
+run,test,"Freight 2020 (PJ, truck output)",Truck fuel 2020 (PJ),BET share 2020 (%),CO2 freight trucks 2020 (Mt),ZE share 2030 (%),ZE share 2050 (%),CO2 freight trucks 2030 (Mt),Total cost vs base run (%)
+F1_nofcet,base year,90.0,221.62,3.5,15.08,96.54,99.76,0.62,0.0
+F2_nofcet,base year,90.0,221.62,3.5,15.08,97.55,99.86,0.44,0.0
+F3_nofcet,base year,90.0,221.62,3.5,15.08,98.25,99.95,0.31,0.0
+F4_nofcet,base year,90.0,221.62,3.5,15.08,98.56,99.98,0.26,0.0
+F1_fuel90_nofcet,fuel90,36.0,86.62,8.76,5.7,95.27,99.57,0.34,-14.71
+F4_fuel90_nofcet,fuel90,36.0,86.62,8.76,5.7,97.51,99.87,0.18,-11.82
+F1_diesel_nofcet,diesel,90.0,221.62,3.5,15.08,91.86,98.94,1.45,-4.4
+F1_untaxed_nofcet,untaxed,90.0,221.62,3.5,15.08,45.21,97.3,9.78,-15.99
+F1_vom3_nofcet,vom3,90.0,221.62,3.5,15.08,87.39,98.66,2.25,15.51
+F1_tres6,tres6,90.0,221.62,3.5,15.08,99.02,100.0,0.18,4.15
+F1_nostock_nofcet,nostock,90.0,128.62,99.95,0.01,96.54,99.76,0.62,-5.47

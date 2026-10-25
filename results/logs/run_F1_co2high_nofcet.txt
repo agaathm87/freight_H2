@@ -1,0 +1,12 @@
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 80.38it/s]Writing constraints.:  46%|[38;2;128;191;255m████▌     [0m| 18/39 [00:00<00:00, 68.16it/s]Writing constraints.:  64%|[38;2;128;191;255m██████▍   [0m| 25/39 [00:00<00:00, 50.53it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 79.17it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 185.82it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1397615821349.8552
+F1_co2high_nofcet: solved in 396 s

@@ -1,0 +1,11 @@
+{
+  "scenario": "F3",
+  "settings": {
+    "bet_costs": "constant",
+    "co2_price": "low",
+    "gasoline_price": "sharp",
+    "label": "F3 BET-flat / fuel-sharp"
+  },
+  "source_database": "input_databases\\freight_nl",
+  "source_fingerprint": "962f368edcd1157a21c40414cee561fc17f84704e399c48eba965f6352ffb351"
+}

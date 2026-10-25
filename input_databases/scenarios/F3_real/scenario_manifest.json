@@ -1,0 +1,18 @@
+{
+  "scenario": "F3_real",
+  "settings": {
+    "bet_costs": "constant",
+    "bet_tiers": "nl",
+    "co2_price": "low",
+    "fcet_vom_factor": 1.5,
+    "freight_heavy_share": 0.05,
+    "gasoline_price": "sharp",
+    "h2_truck_max_share": "market",
+    "label": "F3 BET-flat / fuel-sharp",
+    "truck_fuel_price": "diesel_nl_sharp",
+    "truck_toll": "nl2026",
+    "ze_max_share": "market"
+  },
+  "source_database": "input_databases/freight_nl",
+  "source_fingerprint": "962f368edcd1157a21c40414cee561fc17f84704e399c48eba965f6352ffb351"
+}

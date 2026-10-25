@@ -1,0 +1,12 @@
+Test,Scenario,Truck energy input 2020 (PJ),BET share of freight 2020 (%),Truck CO2 2020 (Mt),Zero-emission share 2030 (%),Truck CO2 2030 (Mt),Cost change (%)
+Calibrated base year (the 2020 stock),F1,222,3.5,15.1,96.5,0.6,–
+Calibrated base year (the 2020 stock),F2,222,3.5,15.1,97.5,0.4,–
+Calibrated base year (the 2020 stock),F3,222,3.5,15.1,98.2,0.3,–
+Calibrated base year (the 2020 stock),F4,222,3.5,15.1,98.6,0.3,–
+"90 PJ read as fuel, not as truck output",F1,87,8.8,5.7,95.3,0.3,−14.7
+"90 PJ read as fuel, not as truck output",F4,87,8.8,5.7,97.5,0.2,−11.8
+Diesel without VAT instead of the course's gasoline price,F1,222,3.5,15.1,91.9,1.4,−4.4
+Fuel without excise (70–85 €/MWh),F1,222,3.5,15.1,45.2,9.8,−16.0
+Charging penalty ×3 (0.30 €/kWh),F1,222,3.5,15.1,87.4,2.2,+15.5
+6-hour instead of 15-hour time steps,F1 (with hydrogen trucks),222,3.5,15.1,99.0,0.2,+4.2
+No 2020 truck stock,F1,129,99.95,0.01,96.5,0.6,−5.5

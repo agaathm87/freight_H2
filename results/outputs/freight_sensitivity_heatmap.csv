@@ -1,0 +1,121 @@
+indicator,set,run,value
+Zero-emission share 2030 (%),F1 core,F1_nofcet,96.543
+Zero-emission share 2030 (%),F1 core,F1_co2central_nofcet,96.971
+Zero-emission share 2030 (%),F1 core,F1_co2high_nofcet,96.133
+Zero-emission share 2030 (%),F1 core,F1_sunday_ban_nofcet,96.512
+Zero-emission share 2030 (%),F1 core,F1_night_ban_nofcet,95.963
+Zero-emission share 2030 (%),F4 core,F4_nofcet,98.559
+Zero-emission share 2030 (%),F4 core,F4_co2central_nofcet,98.904
+Zero-emission share 2030 (%),F4 core,F4_co2high_nofcet,98.303
+Zero-emission share 2030 (%),F4 core,F4_sunday_ban_nofcet,98.537
+Zero-emission share 2030 (%),F4 core,F4_night_ban_nofcet,98.096
+Zero-emission share 2030 (%),F1 realistic,F1_real,40.0
+Zero-emission share 2030 (%),F1 realistic,F1_real_co2central,40.0
+Zero-emission share 2030 (%),F1 realistic,F1_real_co2high,40.0
+Zero-emission share 2030 (%),F1 realistic,F1_real_sunday_ban,40.0
+Zero-emission share 2030 (%),F1 realistic,F1_real_night_ban,40.0
+Zero-emission share 2030 (%),F4 realistic,F4_real,40.0
+Zero-emission share 2030 (%),F4 realistic,F4_real_co2central,40.0
+Zero-emission share 2030 (%),F4 realistic,F4_real_co2high,40.0
+Zero-emission share 2030 (%),F4 realistic,F4_real_sunday_ban,40.0
+Zero-emission share 2030 (%),F4 realistic,F4_real_night_ban,40.0
+Zero-emission share 2040 (%),F1 core,F1_nofcet,99.005
+Zero-emission share 2040 (%),F1 core,F1_co2central_nofcet,99.282
+Zero-emission share 2040 (%),F1 core,F1_co2high_nofcet,99.473
+Zero-emission share 2040 (%),F1 core,F1_sunday_ban_nofcet,98.976
+Zero-emission share 2040 (%),F1 core,F1_night_ban_nofcet,98.615
+Zero-emission share 2040 (%),F4 core,F4_nofcet,99.62
+Zero-emission share 2040 (%),F4 core,F4_co2central_nofcet,99.75
+Zero-emission share 2040 (%),F4 core,F4_co2high_nofcet,99.89
+Zero-emission share 2040 (%),F4 core,F4_sunday_ban_nofcet,99.603
+Zero-emission share 2040 (%),F4 core,F4_night_ban_nofcet,99.546
+Zero-emission share 2040 (%),F1 realistic,F1_real,90.0
+Zero-emission share 2040 (%),F1 realistic,F1_real_co2central,90.0
+Zero-emission share 2040 (%),F1 realistic,F1_real_co2high,90.0
+Zero-emission share 2040 (%),F1 realistic,F1_real_sunday_ban,90.0
+Zero-emission share 2040 (%),F1 realistic,F1_real_night_ban,90.0
+Zero-emission share 2040 (%),F4 realistic,F4_real,90.0
+Zero-emission share 2040 (%),F4 realistic,F4_real_co2central,90.0
+Zero-emission share 2040 (%),F4 realistic,F4_real_co2high,90.0
+Zero-emission share 2040 (%),F4 realistic,F4_real_sunday_ban,90.0
+Zero-emission share 2040 (%),F4 realistic,F4_real_night_ban,90.0
+BET capacity 2050 (GW),F1 core,F1_nofcet,6.656
+BET capacity 2050 (GW),F1 core,F1_co2central_nofcet,6.656
+BET capacity 2050 (GW),F1 core,F1_co2high_nofcet,6.656
+BET capacity 2050 (GW),F1 core,F1_sunday_ban_nofcet,6.892
+BET capacity 2050 (GW),F1 core,F1_night_ban_nofcet,7.872
+BET capacity 2050 (GW),F4 core,F4_nofcet,6.786
+BET capacity 2050 (GW),F4 core,F4_co2central_nofcet,6.786
+BET capacity 2050 (GW),F4 core,F4_co2high_nofcet,6.786
+BET capacity 2050 (GW),F4 core,F4_sunday_ban_nofcet,7.026
+BET capacity 2050 (GW),F4 core,F4_night_ban_nofcet,8.103
+BET capacity 2050 (GW),F1 realistic,F1_real,4.258
+BET capacity 2050 (GW),F1 realistic,F1_real_co2central,4.099
+BET capacity 2050 (GW),F1 realistic,F1_real_co2high,4.476
+BET capacity 2050 (GW),F1 realistic,F1_real_sunday_ban,4.428
+BET capacity 2050 (GW),F1 realistic,F1_real_night_ban,4.431
+BET capacity 2050 (GW),F4 realistic,F4_real,6.324
+BET capacity 2050 (GW),F4 realistic,F4_real_co2central,6.457
+BET capacity 2050 (GW),F4 realistic,F4_real_co2high,6.646
+BET capacity 2050 (GW),F4 realistic,F4_real_sunday_ban,6.548
+BET capacity 2050 (GW),F4 realistic,F4_real_night_ban,7.065
+Freight CO2 2020–2059 (Mt),F1 core,F1_nofcet,159.441
+Freight CO2 2020–2059 (Mt),F1 core,F1_co2central_nofcet,157.991
+Freight CO2 2020–2059 (Mt),F1 core,F1_co2high_nofcet,158.993
+Freight CO2 2020–2059 (Mt),F1 core,F1_sunday_ban_nofcet,159.868
+Freight CO2 2020–2059 (Mt),F1 core,F1_night_ban_nofcet,161.266
+Freight CO2 2020–2059 (Mt),F4 core,F4_nofcet,154.15
+Freight CO2 2020–2059 (Mt),F4 core,F4_co2central_nofcet,153.239
+Freight CO2 2020–2059 (Mt),F4 core,F4_co2high_nofcet,154.021
+Freight CO2 2020–2059 (Mt),F4 core,F4_sunday_ban_nofcet,154.514
+Freight CO2 2020–2059 (Mt),F4 core,F4_night_ban_nofcet,155.181
+Freight CO2 2020–2059 (Mt),F1 realistic,F1_real,278.042
+Freight CO2 2020–2059 (Mt),F1 realistic,F1_real_co2central,277.985
+Freight CO2 2020–2059 (Mt),F1 realistic,F1_real_co2high,277.797
+Freight CO2 2020–2059 (Mt),F1 realistic,F1_real_sunday_ban,278.331
+Freight CO2 2020–2059 (Mt),F1 realistic,F1_real_night_ban,278.108
+Freight CO2 2020–2059 (Mt),F4 realistic,F4_real,277.802
+Freight CO2 2020–2059 (Mt),F4 realistic,F4_real_co2central,277.875
+Freight CO2 2020–2059 (Mt),F4 realistic,F4_real_co2high,277.752
+Freight CO2 2020–2059 (Mt),F4 realistic,F4_real_sunday_ban,278.095
+Freight CO2 2020–2059 (Mt),F4 realistic,F4_real_night_ban,277.842
+System CO2 2020–2059 (Gt),F1 core,F1_nofcet,2.355
+System CO2 2020–2059 (Gt),F1 core,F1_co2central_nofcet,1.922
+System CO2 2020–2059 (Gt),F1 core,F1_co2high_nofcet,1.599
+System CO2 2020–2059 (Gt),F1 core,F1_sunday_ban_nofcet,2.355
+System CO2 2020–2059 (Gt),F1 core,F1_night_ban_nofcet,2.338
+System CO2 2020–2059 (Gt),F4 core,F4_nofcet,2.346
+System CO2 2020–2059 (Gt),F4 core,F4_co2central_nofcet,1.902
+System CO2 2020–2059 (Gt),F4 core,F4_co2high_nofcet,1.581
+System CO2 2020–2059 (Gt),F4 core,F4_sunday_ban_nofcet,2.345
+System CO2 2020–2059 (Gt),F4 core,F4_night_ban_nofcet,2.335
+System CO2 2020–2059 (Gt),F1 realistic,F1_real,2.485
+System CO2 2020–2059 (Gt),F1 realistic,F1_real_co2central,2.039
+System CO2 2020–2059 (Gt),F1 realistic,F1_real_co2high,1.696
+System CO2 2020–2059 (Gt),F1 realistic,F1_real_sunday_ban,2.485
+System CO2 2020–2059 (Gt),F1 realistic,F1_real_night_ban,2.484
+System CO2 2020–2059 (Gt),F4 realistic,F4_real,2.427
+System CO2 2020–2059 (Gt),F4 realistic,F4_real_co2central,1.992
+System CO2 2020–2059 (Gt),F4 realistic,F4_real_co2high,1.673
+System CO2 2020–2059 (Gt),F4 realistic,F4_real_sunday_ban,2.426
+System CO2 2020–2059 (Gt),F4 realistic,F4_real_night_ban,2.423
+"System cost vs base run (bn €, discounted 2020–2059)",F1 core,F1_nofcet,1319.738
+"System cost vs base run (bn €, discounted 2020–2059)",F1 core,F1_co2central_nofcet,1367.127
+"System cost vs base run (bn €, discounted 2020–2059)",F1 core,F1_co2high_nofcet,1397.616
+"System cost vs base run (bn €, discounted 2020–2059)",F1 core,F1_sunday_ban_nofcet,1321.827
+"System cost vs base run (bn €, discounted 2020–2059)",F1 core,F1_night_ban_nofcet,1324.578
+"System cost vs base run (bn €, discounted 2020–2059)",F4 core,F4_nofcet,1255.288
+"System cost vs base run (bn €, discounted 2020–2059)",F4 core,F4_co2central_nofcet,1301.244
+"System cost vs base run (bn €, discounted 2020–2059)",F4 core,F4_co2high_nofcet,1330.647
+"System cost vs base run (bn €, discounted 2020–2059)",F4 core,F4_sunday_ban_nofcet,1257.18
+"System cost vs base run (bn €, discounted 2020–2059)",F4 core,F4_night_ban_nofcet,1259.56
+"System cost vs base run (bn €, discounted 2020–2059)",F1 realistic,F1_real,1343.547
+"System cost vs base run (bn €, discounted 2020–2059)",F1 realistic,F1_real_co2central,1394.165
+"System cost vs base run (bn €, discounted 2020–2059)",F1 realistic,F1_real_co2high,1430.004
+"System cost vs base run (bn €, discounted 2020–2059)",F1 realistic,F1_real_sunday_ban,1344.604
+"System cost vs base run (bn €, discounted 2020–2059)",F1 realistic,F1_real_night_ban,1344.573
+"System cost vs base run (bn €, discounted 2020–2059)",F4 realistic,F4_real,1315.153
+"System cost vs base run (bn €, discounted 2020–2059)",F4 realistic,F4_real_co2central,1364.64
+"System cost vs base run (bn €, discounted 2020–2059)",F4 realistic,F4_real_co2high,1400.088
+"System cost vs base run (bn €, discounted 2020–2059)",F4 realistic,F4_real_sunday_ban,1316.187
+"System cost vs base run (bn €, discounted 2020–2059)",F4 realistic,F4_real_night_ban,1316.327

@@ -1,0 +1,18 @@
+scenario,lever,run,Zero- emission 2030 (%),Zero- emission 2040 (%),H2 trucks 2050 (%),Green H2 share 2050 (%),Freight CO2 2020– 2059 (Mt),System CO2 2020– 2059 (Gt),Cost vs current policies (bn €)
+F1,Current policies (F1_real),F1_real,40.0,90.0,39.847,39.962,278.042,2.485,1343.547
+F1,No truck or hydrogen policies,F1_real_nopolicy,40.0,70.607,39.604,43.241,317.037,2.521,1293.921
+F1,ICE + BET only (no H2 trucks),F1_real_noh2,40.0,90.0,0.0,48.856,288.527,2.462,1356.329
+F1,EU hydrogen targets in full,F1_real_h2eu,40.0,90.0,39.921,66.478,277.883,2.436,1348.262
+F1,Renewable H2 at the pump,F1_real_h2green,40.0,90.0,39.886,58.943,277.958,2.444,1345.398
+F1,H2 production subsidy €1/kg,F1_real_h2subsidy,40.0,90.0,39.934,99.294,277.854,2.405,1328.176
+F1,Net zero + renewable H2 at the pump,F1_real_netzero,40.0,90.0,39.914,84.977,277.898,1.841,1370.415
+F1,No ramp-up or H2-truck limits,F1_real_nolimit,95.06,95.0,39.943,32.992,169.634,2.417,1318.425
+F1,No heavy special segment,F1_real_noheavy,40.0,90.0,39.82,37.316,278.1,2.49,1342.228
+F1,Water-scarcity driver,F1_real_water,40.0,90.0,39.847,38.35,278.042,2.489,1343.685
+F4,Current policies (F4_real),F4_real,40.0,90.0,4.958,58.794,277.802,2.427,1315.153
+F4,No truck or hydrogen policies,F4_real_nopolicy,40.0,90.0,4.87,56.654,277.993,2.432,1265.534
+F4,ICE + BET only (no H2 trucks),F4_real_noh2,40.0,90.0,0.0,48.014,288.527,2.449,1320.385
+F4,EU hydrogen targets in full,F4_real_h2eu,40.0,90.0,4.952,76.574,277.816,2.412,1321.096
+F4,Net zero + renewable H2 at the pump,F4_real_netzero,40.0,90.0,4.938,87.76,277.846,1.84,1338.973
+F4,No ramp-up or H2-truck limits,F4_real_nolimit,97.74,99.918,5.0,57.93,154.972,2.288,1245.64
+F4,Water-scarcity driver,F4_real_water,40.0,90.0,4.958,58.733,277.803,2.427,1315.267

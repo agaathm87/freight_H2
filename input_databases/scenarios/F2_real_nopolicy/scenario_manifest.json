@@ -1,0 +1,21 @@
+{
+  "scenario": "F2_real_nopolicy",
+  "settings": {
+    "bet_capex_subsidy": null,
+    "bet_costs": "decrease",
+    "bet_tiers": "nl",
+    "co2_price": "low",
+    "fcet_vom_factor": 1.5,
+    "freight_heavy_share": 0.05,
+    "gasoline_price": "moderate",
+    "h2_truck_max_share": "market",
+    "label": "F2 BET-cheap / fuel-moderate",
+    "rfnbo_transport": null,
+    "truck_fuel_price": "diesel_nl",
+    "truck_toll": null,
+    "ze_max_share": "market",
+    "ze_min_share": null
+  },
+  "source_database": "input_databases/freight_nl",
+  "source_fingerprint": "962f368edcd1157a21c40414cee561fc17f84704e399c48eba965f6352ffb351"
+}

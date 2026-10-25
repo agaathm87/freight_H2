@@ -1,0 +1,11 @@
+| | Base | Medium | Scarce |
+|---|---|---|---|
+| System cost 2020-2059 (bn €, discounted) | 1,058.0 | 1,060.2 | 1,064.4 |
+| Electrolysis share of H₂, 2050 | 84% | 43% | 0% |
+| Electrolysers, 2050 (GW of power input) | 11.3 | 5.7 | 0.0 |
+| Electrolyser full-load hours, 2050 | 4,593 | 4,645 | 0 |
+| Gas for hydrogen, 2050 (TWh) | 10.0 | 36.1 | 62.8 |
+| Gas imports 2020-2059 (TWh) | 10,833 | 11,124 | 11,500 |
+| CO₂ 2020-2059 (Mt) | 1,717 | 1,798 | 1,872 |
+| CO₂ from hydrogen, 2050 (Mt) | 0.2 | 0.7 | 1.3 |
+| Water for hydrogen, 2050 (million m³) | 29.8 | 33.1 | 36.4 |

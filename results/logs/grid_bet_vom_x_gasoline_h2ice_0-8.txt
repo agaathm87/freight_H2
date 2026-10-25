@@ -1,0 +1,108 @@
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 81.93it/s]Writing constraints.:  46%|[38;2;128;191;255m████▌     [0m| 18/39 [00:00<00:00, 66.30it/s]Writing constraints.:  64%|[38;2;128;191;255m██████▍   [0m| 25/39 [00:00<00:00, 45.08it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 71.66it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 161.00it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1096622974615.9465
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price70_bet_vom_factor1p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 79.22it/s]Writing constraints.:  44%|[38;2;128;191;255m████▎     [0m| 17/39 [00:00<00:00, 62.64it/s]Writing constraints.:  62%|[38;2;128;191;255m██████▏   [0m| 24/39 [00:00<00:00, 45.94it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 75.06it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 184.66it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1117599986429.4583
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price70_bet_vom_factor2p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 77.99it/s]Writing constraints.:  44%|[38;2;128;191;255m████▎     [0m| 17/39 [00:00<00:00, 62.37it/s]Writing constraints.:  62%|[38;2;128;191;255m██████▏   [0m| 24/39 [00:00<00:00, 43.55it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 69.73it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 159.80it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1117599984610.5635
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price70_bet_vom_factor3p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 59.77it/s]Writing constraints.:  38%|[38;2;128;191;255m███▊      [0m| 15/39 [00:00<00:00, 50.34it/s]Writing constraints.:  54%|[38;2;128;191;255m█████▍    [0m| 21/39 [00:00<00:00, 52.68it/s]Writing constraints.:  69%|[38;2;128;191;255m██████▉   [0m| 27/39 [00:00<00:00, 51.64it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 71.28it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 188.92it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1117599982306.624
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price70_bet_vom_factor4p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 78.48it/s]Writing constraints.:  44%|[38;2;128;191;255m████▎     [0m| 17/39 [00:00<00:00, 60.51it/s]Writing constraints.:  62%|[38;2;128;191;255m██████▏   [0m| 24/39 [00:00<00:00, 46.07it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 74.91it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 183.25it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1205225131530.8037
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price120_bet_vom_factor1p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 84.75it/s]Writing constraints.:  46%|[38;2;128;191;255m████▌     [0m| 18/39 [00:00<00:00, 67.35it/s]Writing constraints.:  64%|[38;2;128;191;255m██████▍   [0m| 25/39 [00:00<00:00, 47.99it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 75.69it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 169.12it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1288705804441.2246
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price120_bet_vom_factor2p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 84.79it/s]Writing constraints.:  46%|[38;2;128;191;255m████▌     [0m| 18/39 [00:00<00:00, 65.99it/s]Writing constraints.:  64%|[38;2;128;191;255m██████▍   [0m| 25/39 [00:00<00:00, 48.68it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 76.35it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 181.94it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1295911348108.9988
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price120_bet_vom_factor3p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 82.28it/s]Writing constraints.:  46%|[38;2;128;191;255m████▌     [0m| 18/39 [00:00<00:00, 65.67it/s]Writing constraints.:  64%|[38;2;128;191;255m██████▍   [0m| 25/39 [00:00<00:00, 46.42it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 73.59it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 161.50it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1295911348734.261
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price120_bet_vom_factor4p0: solved and saved
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/39 [00:00<?, ?it/s]Writing constraints.:  23%|[38;2;128;191;255m██▎       [0m| 9/39 [00:00<00:00, 80.54it/s]Writing constraints.:  46%|[38;2;128;191;255m████▌     [0m| 18/39 [00:00<00:00, 64.25it/s]Writing constraints.:  64%|[38;2;128;191;255m██████▍   [0m| 25/39 [00:00<00:00, 46.74it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 39/39 [00:00<00:00, 73.92it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 183.15it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1314634572195.7534
+sens_bet_vom_x_gasoline_h2ice_F1_gasoline_price200_bet_vom_factor1p0: solved and saved

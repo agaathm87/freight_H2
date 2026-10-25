@@ -1,0 +1,26 @@
+Setting,Scenarios,2020,2030,2040,2050,Source
+**Scenario axes and carbon price (all runs)**,,,,,,
+Freight demand (TWh/yr of truck output),All,25.0,28.6,31.7,34.6,"Assignment (90 PJ in 2020); GDP elasticity 0.6 (KiM, 2021: ~1.0 in the short run)"
+BET CAPEX (€/kW),"F1, F3",650,650,650,650,Assignment
+,"F2, F4",650,420,325,290,Link et al. (2024)
+"BET VOM, the charging penalty (€/kWh of electricity)","F1, F3",0.10,0.10,0.10,0.10,Assignment
+,"F2, F4",0.10,0.05,0.03,0.02,Charging roll-out (Regulation (EU) 2023/1804)
+"Gasoline price, with excise (€/MWh)","F1, F2",200,220,240,260,IISD (2025)
+,"F3, F4",200,300,400,500,Course database
+"Carbon price, ETS1 (€/t CO2)",All,30,75,130,170,"Group model (Učelniece et al., 2026)"
+"Carbon price, ETS2 on road fuels (€/t CO2)",All,–,55,55,170,"van der Veen et al. (2026, p. 17)"
+**Realistic layer (F1_real to F4_real)**,,,,,,
+"Zero-emission share of freight, minimum (CO2 standards)",All,–,30%,65%,75%,Regulation (EU) 2024/1610; Transport & Environment (2024)
+"Zero-emission share of freight, maximum (market ramp-up)",All,–,40%,90%,–,Mulholland & Benoit (2026)
+"Hydrogen trucks (FCET + H2-ICE), maximum share of freight",All,–,3%,25%,–,Regulation (EU) 2023/1804; Electrive (2026)
+"BET duty cycles, share of freight: urban at most / regional (the assignment's BET) the next; long haul the rest (costs: Table A2)",All,–,25% / 35%,25% / 35%,25% / 35%,TNO (2021); Sharpe & Basma (2022); Basma et al. (2022); Milence (2025)
+"Heavy special segment, ICE or H2-ICE trucks only (share of freight)",All,5%,5%,5%,5%,Wang & Ahluwalia (2026); MAN Truck & Bus (2024)
+"Truck toll, ICE / zero-emission (€/km)",All,–,0.20 / 0.039,0.20 / 0.039,0.20 / 0.039,Ministerie van Infrastructuur en Waterstaat (2026)
+"Purchase subsidy for BETs, AanZET (share of CAPEX)",All,–,20%,–,–,RVO (2026a)
+"Purchase subsidy for hydrogen trucks, SWiM (share of CAPEX)",All,–,60%,–,–,RVO (2026b)
+"Electrolyser subsidy, OWE (share of CAPEX)",All,–,50%,–,–,RVO (n.d.); Rijksoverheid (2025)
+"Renewable hydrogen in road transport (share of road-transport energy, counted double)",All,–,1%,1%,1%,Directive (EU) 2023/2413
+"Renewable hydrogen in industry, Dutch obligation (share of industrial hydrogen)",All,–,4%,9.9%,9.9%,Tweede Kamer der Staten-Generaal (2026); KGG (2026)
+"Diesel price for trucks, without VAT (€/MWh)","F1, F2",105,150,155,160,"Weekly Oil Bulletin (European Commission, n.d.)"
+,"F3, F4",105,205,258,308,The course's sharp-to-moderate ratio
+Hydrogen delivery and station cost (€/kg; ×1.5 of the extension),All,–,6.00,4.50,3.75,Chung & Wang (2024)

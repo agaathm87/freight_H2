@@ -1,0 +1,12 @@
+{
+  "scenario": "F4_co2high_nofcet",
+  "settings": {
+    "bet_costs": "decrease",
+    "co2_price": "high",
+    "fcet": false,
+    "gasoline_price": "sharp",
+    "label": "F4 BET-cheap / fuel-sharp"
+  },
+  "source_database": "input_databases/freight_nl",
+  "source_fingerprint": "a2a39270331f8fadf3deede9614e63135262162b013e2875d064ca373c2ecda4"
+}

@@ -1,0 +1,12 @@
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/63 [00:00<?, ?it/s]Writing constraints.:  13%|[38;2;128;191;255m█▎        [0m| 8/63 [00:00<00:00, 66.24it/s]Writing constraints.:  24%|[38;2;128;191;255m██▍       [0m| 15/63 [00:00<00:01, 26.14it/s]Writing constraints.:  33%|[38;2;128;191;255m███▎      [0m| 21/63 [00:00<00:01, 24.20it/s]Writing constraints.:  40%|[38;2;128;191;255m███▉      [0m| 25/63 [00:01<00:01, 19.63it/s]Writing constraints.:  59%|[38;2;128;191;255m█████▊    [0m| 37/63 [00:01<00:00, 35.99it/s]Writing constraints.:  86%|[38;2;128;191;255m████████▌ [0m| 54/63 [00:01<00:00, 61.03it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 63/63 [00:01<00:00, 45.29it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.:  82%|[38;2;128;191;255m████████▏ [0m| 9/11 [00:00<00:00, 87.49it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 89.29it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1245640375371.3254
+F4_real_nolimit: solved in 783 s

@@ -1,0 +1,12 @@
+2020
+2030
+2040
+2050
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/67 [00:00<?, ?it/s]Writing constraints.:   3%|[38;2;128;191;255m▎         [0m| 2/67 [00:00<00:06,  9.44it/s]Writing constraints.:  12%|[38;2;128;191;255m█▏        [0m| 8/67 [00:00<00:01, 29.72it/s]Writing constraints.:  18%|[38;2;128;191;255m█▊        [0m| 12/67 [00:00<00:02, 22.54it/s]Writing constraints.:  31%|[38;2;128;191;255m███▏      [0m| 21/67 [00:00<00:01, 34.37it/s]Writing constraints.:  37%|[38;2;128;191;255m███▋      [0m| 25/67 [00:00<00:01, 33.19it/s]Writing constraints.:  82%|[38;2;128;191;255m████████▏ [0m| 55/67 [00:00<00:00, 97.34it/s]Writing constraints.: 100%|[38;2;128;191;255m██████████[0m| 67/67 [00:01<00:00, 65.52it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/11 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m██████████[0m| 11/11 [00:00<00:00, 110.40it/s]
+
+
+Model Status: ok
+Termination Condition: optimal
+Objective value: 1316186818223.7605
+F4_real_sunday_ban: solved in 623 s
